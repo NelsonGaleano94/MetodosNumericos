@@ -47,8 +47,6 @@ ENCABEZADO DE NUESTRA TABLA
 print("\n\n{:^110}".format("METODO DE BISECCIÓN"))
 print("{:^15}{:^14}{:^14}{:^15}{:^25}{:^25}{:^15}".format("n", "a", "b","pn","f(pn)","f(a)*f(pn)","error(%"))
 
-print(f(a))
-print(f(b))
 ### DEFINIMOS NUESTRA CRITERIO ###
 if f(a) * f(b) < 0: ## gracias a la librería sympy nos permite evaluar la función directamente como variables simbolicas    
     pn = (a + b) / 2
@@ -64,7 +62,7 @@ if f(a) * f(b) < 0: ## gracias a la librería sympy nos permite evaluar la funci
         
         """
         
-        puntosX = np.linspace(-10,10)
+        puntosX = np.linspace(-10,10) ## Definimos los puntos a graficar en el eje x
         plt.plot(puntosX, f(puntosX))
         plt.title("GRAFICA DE LA FUNCIÓN / METODO BISECCIÓN")
         plt.axhline(color="black")
@@ -74,12 +72,12 @@ if f(a) * f(b) < 0: ## gracias a la librería sympy nos permite evaluar la funci
         plt.xlabel("x")
         plt.ylabel("f(x)")
         plt.grid(True, which='both')
-        plt.ylim([-15,15])
+        plt.ylim([-15,15]) ## definimos los puntos a gráficar en el eje y
         plt.show()
     
    
     else:
-        while error > t and n <= cantidadIteraciones:
+        while error > t and n <= cantidadIteraciones: ## Condiciones de parada
             pn = (a + b) / 2
             error = abs((pn - pn_1)/pn)
             criterio = f(pn) * f(a) ## nuestro criterio de ubicación de la raíz
