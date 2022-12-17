@@ -6,7 +6,7 @@ import math
 p = math.pi
 
 columnas = ["Iteracion", "Xi", "F(Xi)", "F'(Xi)", "Xi+1", "Error"]
-datos = [[0,0,0,0,1,0]]
+datos = [[0,0,0,0,0,0]]
 tabla = pd.DataFrame(datos, columns=columnas)
 
 x = sp.symbols("x")
@@ -14,6 +14,8 @@ f = input("Introduzca la funcion ")   #   x**3 - cos(x)
 df = sp.diff(f) #  funcion a derivar
 f = sp.lambdify(x, f)
 df = sp.lambdify(x, df)
+   
+
 
 x0 = 1
 i = 1
@@ -37,7 +39,7 @@ while error >  1e-6:  # error sera de 6 cifras siginificativas
     i = 1 + i
 
 
-print("El error es : ", error) 
+print("El error es : ", "{0:.10f}".format(error)) 
 print("La Raiz es : ",x1)   
 
 plt.title("Metodo de Newton Raphson")
@@ -46,5 +48,9 @@ plt.plot(x, f(x))
 plt.plot(x0, f(x0), 'ro')
 plt.grid()
 plt.show()
+
+# x**3 - cos(x)
+# sin(x) - x**2
+# sin(x) - cos(x)
 
 

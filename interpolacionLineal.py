@@ -5,8 +5,8 @@ from sympy import *
 
 x = symbols('x')
 
-z = np.array([1, 3, 6, 9])
-y = np.array([2, 4, 6, 8])  
+z = np.array([1, 3, 6, 9, 11])
+y = np.array([2, 4, 6, 8, 9])  
 
 #z = np.array([-3, -1, 1, 2])
 #y = np.array([6, 2, -1, 3]) 
@@ -52,6 +52,7 @@ for tramo in range(1,N,1):
 
 plt.plot(z, y, 'ro') # se grafican los puntos del arreglo dado
 plt.plot(xTeorica, yTeorica, 'b.') # datos interpolados
+
 
 
 
